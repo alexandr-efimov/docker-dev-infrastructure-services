@@ -1,0 +1,20 @@
+version: "2"
+services:
+
+#  MongoDb for development purposes
+  mongo-db:
+    image: 'bitnami/mongodb:4.0-ol-7'
+    mem_limit: 256m
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./databases/mongodb:/data/db
+
+
+#  Rabbitmq for development purposes
+  rabbitmq-management:
+    image: rabbitmq:3-management
+    mem_limit: 512m
+    ports:
+      - 5672:5672
+      - 15672:15672
